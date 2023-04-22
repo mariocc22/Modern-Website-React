@@ -1,16 +1,15 @@
-import { createRoot } from "react-dom/client";
-import styles from "./styles.js";
+import styles from "./styles";
 import {
-  Navbar,
-  Hero,
-  Stats,
-  Business,
   Billing,
+  Business,
   CardDeal,
-  Testimonials,
   Clients,
   CTA,
   Footer,
+  Navbar,
+  Stats,
+  Testimonials,
+  Hero,
 } from "./components";
 
 const App = () => (
@@ -20,12 +19,14 @@ const App = () => (
         <Navbar />
       </div>
     </div>
+
     <div className={`bg-primary ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Hero />
       </div>
     </div>
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
+
+    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
         <Stats />
         <Business />
@@ -40,12 +41,4 @@ const App = () => (
   </div>
 );
 
-// render in html
-let container = null;
-document.addEventListener("DOMContentLoaded", function () {
-  if (!container) {
-    const container = document.getElementById("root");
-    const root = createRoot(container);
-    root.render(<App />);
-  }
-});
+export default App;
